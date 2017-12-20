@@ -1,13 +1,12 @@
+# This code gives an idea of how Feature Extraction works in sklearn using CountVectorizer and TfidfVectorizer
+-----
 
 
->### This code gives an idea of how Feature Extraction works in sklearn using CountVectorizer and TfidfVectorizer
-
-
-#### Problem Statement:
+## Problem Statement:
 
 Classify whether a given text message is Spam or Not. So, here we use the data set provided by [semicolon](https://www.youtube.com/channel/UCwB7HrnRlOfasrbCJoiZ9Lg) [here](https://github.com/shreyans29/thesemicolon/blob/master/smsspam).
 
-## Steps:
+### Steps:
 1. Libraries needed: sklearn and pandas, 
 2. Read the data set using panda.read_csv()
 3. After reading, change the "Status" column items, 'spam' = 0 and 'ham' = 1
@@ -25,9 +24,10 @@ Classify whether a given text message is Spam or Not. So, here we use the data s
 13. Use average_precision_score from sklearn.metrics to see the actual predication percentage
 14. Bouns: I have add prediciton percentage of BernoulliNB() classifier too
 
-##### Prediction percentage of 0.953518893211 for MultinomialNB()
-##### Prediction percentage of 0.966168623976 for BernoulliNB()
 
+
+> Prediction percentage of 0.953518893211 for MultinomialNB()
+> Prediction percentage of 0.966168623976 for BernoulliNB()
 
 
 This example is taken from the tuts by semicolon:
