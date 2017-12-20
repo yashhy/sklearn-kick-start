@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 from sklearn.metrics import accuracy_score, average_precision_score
+import pickle
 
 df=pd.read_csv('smsspam.txt', sep='\t', names=['Status', 'Message'])
 
@@ -77,4 +78,24 @@ bnb.fit(x_train_tf, y_train)
 predict = bnb.predict(x_test_tf)
 
 print(average_precision_score(y_test, predict))
+
+sentense = ['URGENT! You have won a 1 week FREE membership']
+sentense = pd.Series(sentense)
+x_test_tf = tfidf.transform(sentense)
+
+predict = mnb.predict(x_test_tf)
+
+print(predict)
+
+# Pickle the trained model for future predictions
+# https://stackoverflow.com/a/11218504/1778834
+# https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
+
+train_data_file = open("./test-ur-sentence/train_data.pickle", "wb")
+pickle.dump(x_train, train_data_file)
+train_data_file.close()
+
+mnb_pickle_file = open("./test-ur-sentence/spam_trained_model.pickle", "wb")
+pickle.dump(mnb, mnb_pickle_file)
+mnb_pickle_file.close()
 

@@ -27,6 +27,7 @@ Classify whether a given text message is Spam or Not. So, here we use the data s
 
 
 > Prediction percentage of 0.953518893211 for MultinomialNB()
+
 > Prediction percentage of 0.966168623976 for BernoulliNB()
 
 
