@@ -30,6 +30,9 @@ Classify whether a given text message is Spam or Not. So, here we use the data s
 
 > Prediction percentage of 0.966168623976 for BernoulliNB()
 
+## References:
+1. http://www.ritchieng.com/machine-learning-multinomial-naive-bayes-vectorization/
+
 
 This example is taken from the tuts by semicolon:
 1. [Machine Learning with Text - Count Vectorizer](https://www.youtube.com/watch?v=RZYjsw6P4nI)

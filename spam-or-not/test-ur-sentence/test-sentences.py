@@ -1,15 +1,14 @@
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 mnb_pickle_file = open("spam_trained_model.pickle", "rb")
 mnb = pickle.load(mnb_pickle_file)
 mnb_pickle_file.close()
 
-train_data_file = open("train_data.pickle", "rb")
-train_data = pickle.load(train_data_file)
-train_data_file.close()
+tfidf_file = open("tfidf.pickle", "rb")
+tfidf = pickle.load(tfidf_file)
+tfidf_file.close()
 
 sentences = pd.Series([
     'hi honey', 
@@ -20,9 +19,6 @@ sentences = pd.Series([
     'URGENT honey you have won a lottery!!',
     'URGENT! dear You have won a 1 week FREE membership',
     ])
-
-tfidf = TfidfVectorizer(stop_words='english', analyzer='word', min_df=1)
-tfidf.fit_transform(train_data)
 
 x_test_tf = tfidf.transform(sentences)
 

@@ -91,9 +91,9 @@ print(predict)
 # https://stackoverflow.com/a/11218504/1778834
 # https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
 
-train_data_file = open("./test-ur-sentence/train_data.pickle", "wb")
-pickle.dump(x_train, train_data_file)
-train_data_file.close()
+tfidf_file = open("./test-ur-sentence/tfidf.pickle", "wb")
+pickle.dump(tfidf, tfidf_file)
+tfidf_file.close()
 
 mnb_pickle_file = open("./test-ur-sentence/spam_trained_model.pickle", "wb")
 pickle.dump(mnb, mnb_pickle_file)
